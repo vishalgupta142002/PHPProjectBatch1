@@ -19,7 +19,34 @@ if(!$conn) {
     // exit();
 }
 
+$username = $_POST['user_name'];
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
 
+$query = " INSERT INTO employee (user_name, first_name, last_name) VALUES('$username', '$first_name', '$last_name')";
+
+$result = mysqli_query($conn, $query);
+
+if($result){
+    echo " <script>alert('Data has been inserted.');</script>";
+}else{
+    die("Something has been wrong.");
+}
+
+
+$query = " SELECT * from employee ";
+$result_query = mysqli_query($conn, $query);
+if(mysqli_num_rows($result_query) > 0) {
+    $result_data = mysqli_fetch_array($result_query);
+    while($row = $result_data){
+        echo "<pre>";
+        print_r($row);
+        echo "<br>";
+    }
+
+}else{
+    echo " <script>alert('No record found.');</script>";
+}
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +55,7 @@ if(!$conn) {
         <title>Registration Page</title>
 </head>
 <body>
-<form method="get" name="registartion_form" id="registartion_form" action="<?php echo $_SERVER['PHP_SELF'];?>"
+<form method="post" name="registartion_form" id="registartion_form" action="<?php echo $_SERVER['PHP_SELF'];?>"
       autocomplete="off" onsubmit=" return validateRegistartion();">
     <div>
         <label for="user_name">Username</label>
