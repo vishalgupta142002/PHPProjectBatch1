@@ -37,8 +37,9 @@ if($result){
 $query = " SELECT * from employee ";
 $result_query = mysqli_query($conn, $query);
 if(mysqli_num_rows($result_query) > 0) {
-    $result_data = mysqli_fetch_array($result_query);
-    while($row = $result_data){
+    //while($row = mysqli_fetch_array($result_query)){
+    $data = mysqli_fetch_assoc($result_query);
+    while($row = mysqli_fetch_assoc($result_query)){
         echo "<pre>";
         print_r($row);
         echo "<br>";
