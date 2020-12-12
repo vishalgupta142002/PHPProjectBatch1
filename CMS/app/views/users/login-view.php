@@ -13,7 +13,7 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -33,13 +33,13 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="app/views/users/signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
 
 <main class="form-signin">
     <form>
-        <img class="mb-4" src="../../../assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <img class="mb-4" src="assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <label for="inputEmail" class="visually-hidden">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -50,7 +50,7 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <a href="registration-view.php">Register</a>
+        <a href="app/views/users/registration-view.php">Register</a>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
     </form>

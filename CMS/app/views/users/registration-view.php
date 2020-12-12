@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$token = (rand(10,10000000000));
+$_SESSION['token'] = $token;
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,27 +58,28 @@
                 <form class="needs-validation" novalidate action="../../controllers/users/Register.php" method="post">
                     <div class="row g-3">
                         <div class="col-sm-6">
-                            <label for="firstName" class="form-label">First name</label>
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="" required
+                            <label for="first_name" class="form-label">First name</label>
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="" value="" required
                             maxlength="10">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
+                            <input type="hidden" name="token" value="<?php echo $token;?>">
                         </div>
 
                         <div class="col-sm-6">
-                            <label for="lastName" class="form-label">Last name</label>
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>
+                            <label for="last_name" class="form-label">Last name</label>
+                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="" value="" required>
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <label for="username" class="form-label">Username</label>
+                            <label for="user_name" class="form-label">Username</label>
                             <div class="input-group">
                                 <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                                <input type="text" class="form-control" name="user_name" id="user_name" placeholder="user_name" required>
                                 <div class="invalid-feedback">
                                     Your username is required.
                                 </div>
@@ -101,7 +109,7 @@
 
                         <div class="col-md-5">
                             <label for="country" class="form-label">Country</label>
-                            <select class="form-select" id="country" required>
+                            <select class="form-select" name="country" id="country" required>
                                 <option value="">Choose...</option>
                                 <option>United States</option>
                             </select>
@@ -133,12 +141,12 @@
                     <hr class="my-4">
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="same-address[]" id="same-address">
-                        <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+                        <input type="checkbox" class="form-check-input" name="same_address[]" id="same_address">
+                        <label class="form-check-label" for="same_address">Shipping address is the same as my billing address</label>
                     </div>
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="same-address[]" id="save-info">
+                        <input type="checkbox" class="form-check-input" name="same_address[]" id="save-info">
                         <label class="form-check-label" for="save-info">Save this information for next time</label>
                     </div>
 
@@ -148,7 +156,7 @@
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                            <input id="credit" name="payment_method" type="radio" class="form-check-input" checked required>
                             <label class="form-check-label" for="credit">Credit card</label>
                         </div>
                         <div class="form-check">
