@@ -2,6 +2,12 @@
 session_start();
 include_once("../../config/database.php");
 
+
+$_FILES;
+echo "<pre>";print_r($_FILES);
+
+
+
 $token = $_SESSION['token'];
 $form_token = $_POST['token'];
 //echo $_SESSION['token'].'<br>';

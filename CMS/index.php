@@ -1,3 +1,6 @@
 <?php
-require_once("app/views/users/login-view.php");
+
+header("Location: app/controllers/users/Users.php ");
+
 ?>
+

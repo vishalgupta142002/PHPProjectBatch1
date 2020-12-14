@@ -55,7 +55,7 @@ $_SESSION['token'] = $token;
         <div class="row g-3">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Student Details</h4>
-                <form class="needs-validation" novalidate action="../../controllers/users/Register.php" method="post">
+                <form class="needs-validation" novalidate action="../../controllers/users/Users.php" method="post">
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="first_name" class="form-label">First name</label>
@@ -206,7 +206,7 @@ $_SESSION['token'] = $token;
 
                     <hr class="my-4">
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Register</button>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit" value="register">Register</button>
                 </form>
             </div>
         </div>
@@ -225,6 +225,6 @@ $_SESSION['token'] = $token;
 
 <script src="../../../assets/js/bootstrap.bundle.min.js"></script>
 
-<script src="form-validation.js"></script>
+<script src="../../views/users/form-validation.js"></script>
 </body>
 </html>
