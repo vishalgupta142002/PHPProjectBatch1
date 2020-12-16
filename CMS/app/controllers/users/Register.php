@@ -1,4 +1,46 @@
 <?php
+
+
+login($action);
+
+
+function registartion() {
+
+}
+
+function login($action) {
+// login page
+    if($action === 'loginview'){
+        // login page
+    }else if($action === 'submitlogin') {
+// logic for login
+    }
+
+}
+
+function isLoggedIn() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 session_start();
 include_once("../../config/database.php");
 

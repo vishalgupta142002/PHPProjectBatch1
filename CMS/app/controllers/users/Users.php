@@ -1,35 +1,49 @@
 <?php
+session_start();
 
 include_once("../../config/database.php");
 
 $method = @$_SERVER['REQUEST_METHOD'];
-$action = @$_REQUEST['submit'];
+$action = @$_POST['submit']; // through form submit
 $method = strtolower($method);
 $action = strtolower($action);
 
 //echo "$method => $action";die;
 
 if($_SERVER['QUERY_STRING']) {
-    $action = $_SERVER['QUERY_STRING'];
+    $action = $_SERVER['QUERY_STRING']; // through get call
 }
 
-if($method === 'get' && $action === ''){
-    login($method, $action);
-}else if($method === 'get' && $action === 'register'){
-    register($method, $action);
-}else if($method === 'post' && $action === 'register'){
-    register($method, $action);
+//echo "<pre>"; print_r($_SESSION);die;
+
+if(!isLoggedIn()){
+    if($action !== 'register') {
+        $action = 'login';
+        //$method = 'get';
+        login($method, $action);
+    }
+}else{
+    die("User has been loggedin");
 }
+
+if($method === 'get' && ($action === '' || $action === 'login')){
+    login($method, $action);
+}else if(($method === 'get' || $method === 'post') && $action === 'register'){
+    register($method, $action);
+}/*else if($method === 'post' && $action === 'register'){
+    register($method, $action);
+}*/
 
 function login($method, $action) {
     if($method === 'get' && ($action === 'login' || $action === '')) {
-      //  echo getcwd();die;
         include_once("../../views/users/login-view.php");
         exit();
     }else if($method === 'post' && $action === 'login') {
-        // Logic for login
+        $user_name = $_POST['user_name'];
+        $password = $_POST['password'];
+        $_SESSION['username'] = $user_name;
+        die("Successfully loggedin.");
     }
-
 }
 
 
@@ -46,7 +60,11 @@ function register($method, $action){
 
 
 function isLoggedIn() {
-
+    $status = false;
+    if(@$_SESSION['username']) {
+        $status = true;
+    }
+    return $status;
 }
 
 
