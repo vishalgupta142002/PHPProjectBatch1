@@ -1,10 +1,3 @@
-<?php
-session_start();
-
-$token = (rand(10,10000000000));
-$_SESSION['token'] = $token;
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
