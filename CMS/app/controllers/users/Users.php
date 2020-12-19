@@ -4,10 +4,7 @@
 include_once("../../config/database.php");
 include_once("../../helpers/users-utils.php");
 
-$method = @$_SERVER['REQUEST_METHOD'];
-$action = @$_POST['submit']; // through form submit
-$method = strtolower($method);
-$action = strtolower($action);
+
 
 //echo "$method => $action";die;
 
@@ -16,8 +13,8 @@ if($_SERVER['QUERY_STRING']) {
 }
 
 //echo "<pre>"; print_r($_SESSION);die;
-
-if(!isLoggedIn()){
+http://localhost/tutorials/PHPProjectBatch1/CMS
+if(!isLoggedIn()){ // User is not loggedin
     if(empty($action)){
         include_once("../../views/layouts/header.php");
         include_once("../../views/layouts/footer.php");
@@ -27,7 +24,7 @@ if(!isLoggedIn()){
         //$method = 'get';
         login($method, $action);
     }
-}else{
+}else{ // User is loggedin
     include_once("../../views/layouts/header.php");
     include_once("../../views/layouts/footer.php");
     die("User has been loggedin");
@@ -63,7 +60,7 @@ function register($method, $action){
         include_once("../../views/users/registration-view.php");
         exit();
     }else if($method === 'post' && $action === 'register') {
-        // Logic for registration
+               // Logic for registration
 
         echo "<pre>"; print_r($_REQUEST);die;
     }
