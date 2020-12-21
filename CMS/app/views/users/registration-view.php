@@ -13,7 +13,7 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -33,14 +33,14 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
+    <link href="app/views/users/form-validation.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="../../../assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <img class="d-block mx-auto mb-4" src="assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
             <h2>Registration form</h2>
             <p class="lead"></p>
         </div>
@@ -48,7 +48,7 @@
         <div class="row g-3">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Student Details</h4>
-                <form class="needs-validation" novalidate action="../../controllers/users/Users.php" method="post">
+                <form class="needs-validation" novalidate action="?module=users&action=register" method="post">
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="first_name" class="form-label">First name</label>
@@ -200,6 +200,7 @@
                     <hr class="my-4">
 
                     <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit" value="register">Register</button>
+                    <a href="?module=users&action=login">Login</a>
                 </form>
             </div>
         </div>
@@ -216,8 +217,8 @@
 </div>
 
 
-<script src="../../../assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-<script src="../../views/users/form-validation.js"></script>
+<script src="app/views/users/form-validation.js"></script>
 </body>
 </html>

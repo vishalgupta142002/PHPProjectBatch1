@@ -21,7 +21,7 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -41,7 +41,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="../../../assets/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -68,7 +68,7 @@
                         <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Edit</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Delete</a>
+                        <a class="nav-link " href="?module=users&action=logout" tabindex="-1" aria-disabled="true">Logout</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -98,7 +98,8 @@
                     </li>
                 </ul>-->
                 <form class="d-flex">
-                    <a class="nav-link " href="?login.php" tabindex="-1" aria-disabled="true">Login</a>
+                    <a class="nav-link " href="?module=users&action=login" tabindex="-1" aria-disabled="true">Login</a>
+                    <a class="nav-link " href="?module=users&action=register" tabindex="-1" aria-disabled="true">Register</a>
                 </form>
             </div>
             <?php } ?>
