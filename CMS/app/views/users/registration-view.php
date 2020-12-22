@@ -80,6 +80,17 @@
                         </div>
 
                         <div class="col-12">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+                                <div class="invalid-feedback">
+                                    Your password is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
                             <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
                             <div class="invalid-feedback">
@@ -89,7 +100,7 @@
 
                         <div class="col-12">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
+                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St">
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -102,7 +113,7 @@
 
                         <div class="col-md-5">
                             <label for="country" class="form-label">Country</label>
-                            <select class="form-select" name="country" id="country" required>
+                            <select class="form-select" name="country" id="country">
                                 <option value="">Choose...</option>
                                 <option>United States</option>
                             </select>
@@ -113,7 +124,7 @@
 
                         <div class="col-md-4">
                             <label for="state" class="form-label">State</label>
-                            <select class="form-select" name="state" id="state" required>
+                            <select class="form-select" name="state" id="state">
                                 <option value="">Choose...</option>
                                 <option>California</option>
                             </select>
@@ -124,7 +135,7 @@
 
                         <div class="col-md-3">
                             <label for="zip" class="form-label">Zip</label>
-                            <input type="text" class="form-control" name="zip" id="zip" placeholder="" required>
+                            <input type="text" class="form-control" name="zip" id="zip" placeholder="">
                             <div class="invalid-feedback">
                                 Zip code required.
                             </div>
@@ -149,15 +160,15 @@
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="credit" name="payment_method" type="radio" class="form-check-input" checked required>
+                            <input id="credit" name="payment_method" type="radio" class="form-check-input" checked>
                             <label class="form-check-label" for="credit">Credit card</label>
                         </div>
                         <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
                             <label class="form-check-label" for="debit">Debit card</label>
                         </div>
                         <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
                             <label class="form-check-label" for="paypal">PayPal</label>
                         </div>
                     </div>
@@ -165,7 +176,7 @@
                     <div class="row gy-3">
                         <div class="col-md-6">
                             <label for="cc-name" class="form-label">Name on card</label>
-                            <input type="text" class="form-control" name="cc-name" id="cc-name" placeholder="" required>
+                            <input type="text" class="form-control" name="cc-name" id="cc-name" placeholder="">
                             <small class="text-muted">Full name as displayed on card</small>
                             <div class="invalid-feedback">
                                 Name on card is required
@@ -174,7 +185,7 @@
 
                         <div class="col-md-6">
                             <label for="cc-number" class="form-label">Credit card number</label>
-                            <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="" required>
+                            <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="">
                             <div class="invalid-feedback">
                                 Credit card number is required
                             </div>
@@ -182,7 +193,7 @@
 
                         <div class="col-md-3">
                             <label for="cc-expiration" class="form-label">Expiration</label>
-                            <input type="text" class="form-control" name="cc-expiration" id="cc-expiration" placeholder="" required>
+                            <input type="text" class="form-control" name="cc-expiration" id="cc-expiration" placeholder="">
                             <div class="invalid-feedback">
                                 Expiration date required
                             </div>
@@ -190,7 +201,7 @@
 
                         <div class="col-md-3">
                             <label for="cc-cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" name="cc-cvv" id="cc-cvv" placeholder="" required>
+                            <input type="text" class="form-control" name="cc-cvv" id="cc-cvv" placeholder="">
                             <div class="invalid-feedback">
                                 Security code required
                             </div>

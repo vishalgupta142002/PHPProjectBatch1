@@ -3,7 +3,7 @@
 
 function isLoggedIn() {
     $status = false;
-    if(@$_SESSION['username']) {
+    if(@$_SESSION['username'] && @$_SESSION['id']) {
         $status = true;
     }
     return $status;
